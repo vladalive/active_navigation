@@ -1,0 +1,14 @@
+- unless menu.empty?
+  %ul{:class => options[:class] }
+    - menu.each do |item|
+      - item.each_pair do |title, path|
+        %li{:class => (title.parameterize if options[:items_classify]) }
+          - if path.nil? || path == "#"
+            = link_to title, "#", :class => :disabled
+          - elsif path.empty?
+            %span= title
+          - elsif path == "#active"
+            = link_to title, path, :class => options[:class_for_active]
+          - else
+            = link_to_unless_current title, path do
+              = link_to title, path, :class => options[:class_for_active]
