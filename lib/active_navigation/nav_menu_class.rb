@@ -2,7 +2,7 @@ require 'ostruct'
 
 module ActiveNavigation
 
-  module NavMenuClass
+  module Classes
 
     class NavMenu < Struct.new(:items, :options)
     
