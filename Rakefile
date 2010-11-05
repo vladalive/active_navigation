@@ -24,7 +24,7 @@ spec = Gem::Specification.new do |s|
 
   # Change these as appropriate
   s.name              = "active_navigation"
-  s.version           = "0.1.0"
+  s.version           = "0.1.1"
   s.summary           = "Active Navigation is Rails plugin that helps building navigation menus"
   s.author            = "Vlad Alive"
   s.email             = "vladalive@gmail.com"
