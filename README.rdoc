@@ -1,0 +1,58 @@
+= Active Navigation
+
+== Install
+
+  gem install active_navigation
+
+== Example
+
+In your view:
+
+Set a config to menu:
+
+  - nav_menu =    active_nav_menu :class => "nav-main", :items_classify => true
+  - nav_menu.add "Simple link", "/some/path"
+  - nav_menu.add "Link to current page is active", root_path
+  - nav_menu.add "Item with custom class", "/some/path", :class_name => "custom-class-name"
+  - nav_menu.add "Empty link (#)", "#"
+  - nav_menu.add "Empty link ('')", ""
+  - nav_menu.add "Just text"
+
+Render menu:
+
+  = active_navigation nav_menu
+
+In your sass file:
+
+  ul.nav-main
+    li
+    a, span
+    a
+      &:hover
+      &.active
+      &.disabled
+    span
+    li
+      &.custom-class-name a
+
+
+
+== Real World Example
+
+  - nav_menu =    active_nav_menu :class => "nav-example"
+  - nav_menu.add "Home", root_path
+  - nav_menu.add "About", "/about"
+  - nav_menu.add "Portfolio", "/portfolio"
+  - nav_menu.add "Services", "/services"
+  - nav_menu.add "Contacts:"
+  - nav_menu.add "Twitter", "/twitter", :class_name => "tw"
+  - nav_menu.add "Facebook", "/facebook", :class_name => "fb"
+
+  = active_navigation nav_menu
+
+
+
+= Copyright
+
+Copyright (c) 2010 [vladalive.com], released under the MIT license
+
