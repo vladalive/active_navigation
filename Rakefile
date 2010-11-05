@@ -1,4 +1,3 @@
-
 require "rubygems"
 require 'rake'
 require "rake/gempackagetask"
@@ -31,8 +30,8 @@ spec = Gem::Specification.new do |s|
   s.homepage          = "http://github.com/vladalive/active_navigation"
 
   s.has_rdoc          = true
-  s.extra_rdoc_files  = %w(README)
-  s.rdoc_options      = %w(--main README)
+  s.extra_rdoc_files  = %w(README.rdoc)
+  s.rdoc_options      = %w(--main README.rdoc)
   s.platform          = Gem::Platform::RUBY
 
   PKG_FILES = FileList[
@@ -46,7 +45,7 @@ spec = Gem::Specification.new do |s|
   ]
 
   # Add any extra files to include in the gem
-  # s.files             = %w(README init.rb uninstall.rb MIT-LICENSE Rakefile install.rb) + Dir.glob("{test,lib/**/*}")
+  # s.files             = %w(README.rdoc init.rb uninstall.rb MIT-LICENSE Rakefile install.rb) + Dir.glob("{test,lib/**/*}")
   s.files             = PKG_FILES.to_a
   s.require_paths     = ["lib"]
 
@@ -80,8 +79,8 @@ task :package => :gemspec
 
 # Generate documentation
 Rake::RDocTask.new do |rd|
-  rd.main = "README"
-  rd.rdoc_files.include("README", "lib/**/*.rb")
+  rd.main = "README.rdoc"
+  rd.rdoc_files.include("README.rdoc", "lib/**/*.rb")
   rd.rdoc_dir = "rdoc"
 end
 
